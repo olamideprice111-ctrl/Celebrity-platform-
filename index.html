@@ -218,6 +218,7 @@
             <label for="fanEmail">Your Email</label>
             <input type="email" id="fanEmail" required placeholder="john@example.com">
         </div>
+        <div class="form-group">   <label for="celebrityName">Celebrity's Name</label>   <input type="text" id="celebrityName" requ
 
         <div class="form-group">
             <label for="serviceType">Select VIP Service</label>
@@ -243,7 +244,7 @@
 
     <div id="statusMessage"></div>
 </div>
-
+<div class="confetti-piece"></div>
 <script>
     document.getElementById('bookingForm').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -255,6 +256,8 @@
             service: document.getElementById('serviceType').value,
             date: document.getElementById('bookingDate').value,
             notes: document.getElementById('notes').value,
+            celebrityName:
+document.getElementById('celebrityName').value,
             status: "Pending Admin Approval" // This prevents automated booking
         };
 
