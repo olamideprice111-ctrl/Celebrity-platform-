@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snake</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="canvas"></canvas>index.html
+  <script src="render.js"></script><!-- defines canvas, ctx, draw() -->
+  <script src="input.js"></script><!-- attaches keyboard + touch listeners -->
+  <script src="game.js"></script> <!-- state, loop, boot -->
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Celebrity Booking Portal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0f0f12;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .booking-card {
+            background: #1a1a24;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            width: 100%;
+            max-width: 450px;
+        }
+        h2 { text-align: center; color: #ffb703; margin-top: 0; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #ccc; }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            background: #2b2b36;
+            border: 1px solid #444;
+            border-radius: 6px;
+            color: #fff;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #ffb703;
+            border: none;
+            border-radius: 6px;
+            color: #000;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { background: #fb8500; }
+        #statusMessage {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            display: none;
+        }
+        .success { background: #2a9d8f; color: white; }
+    </style>
+</head>
+<body>
+
+<div class="booking-card">
+    <h2>Book a VIP Session</h2>
+    <form id="bookingForm">
+        <div class="form-group">
+            <label for="fanName">Your Name</label>
+            <input type="text" id="fanName" required placeholder="John Doe">
+        </div>
+        
+        <div class="form-group">
+            <label for="fanEmail">Your Email</label>
+            <input type="email" id="fanEmail" required placeholder="john@example.com">
+        </div>
+
+        <div class="form-group">
+            <label for="serviceType">Select VIP Service</label>
+            <select id="serviceType" required>
+                <option value="shoutout">Personalized Video Shoutout ($150)</option>
+                <option value="meet">15-Min Virtual Meet & Greet ($500)</option>
+                <option value="event">Live Event Appearance (Custom Quote)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="bookingDate">Preferred Date</label>
+            <input type="date" id="bookingDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Event Details / Instructions</label>
+            <textarea id="notes" rows="3" placeholder="Provide details for the celebrity..."></textarea>
+        </div>
+
+        <button type="submit">Submit Request for Approval</button>
+    </form>
+
+    <div id="statusMessage"></div>
+</div>
+
+<script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Capture data entered by the fan
+        const bookingData = {
+            name: document.getElementById('fanName').value,
+            email: document.getElementById('fanEmail').value,
+            service: document.getElementById('serviceType').value,
+            date: document.getElementById('bookingDate').value,
+            notes: document.getElementById('notes').value,
+            status: "Pending Admin Approval" // This prevents automated booking
+        };
+
+        // Log to console to simulate sending to a backend manager dashboard
+        console.log("New Booking Sent to Admin Dashboard:", bookingData);
+
+        // Display success message to the fan
+        const statusBox = document.getElementById('statusMessage');
+        statusBox.className = "success";
+        statusBox.innerText = "Thank you! Your request is pending review. The manager will email you shortly regarding approval and payment.";
+        statusBox.style.display = "block";
+
+        // Reset form
+        document.getElementById('bookingForm').reset();
+    });
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Celebrity Booking Portal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0f0f12;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .booking-card {
+            background: #1a1a24;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            width: 100%;
+            max-width: 450px;
+        }
+        h2 { text-align: center; color: #ffb703; margin-top: 0; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #ccc; }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            background: #2b2b36;
+            border: 1px solid #444;
+            border-radius: 6px;
+            color: #fff;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #ffb703;
+            border: none;
+            border-radius: 6px;
+            color: #000;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { background: #fb8500; }
+        #statusMessage {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            display: none;
+        }
+        .success { background: #2a9d8f; color: white; }
+    </style>
+</head>
+<body>
+
+<div class="booking-card">
+    <h2>Book a VIP Session</h2>
+    <form id="bookingForm">
+        <div class="form-group">
+            <label for="fanName">Your Name</label>
+            <input type="text" id="fanName" required placeholder="John Doe">
+        </div>
+        
+        <div class="form-group">
+            <label for="fanEmail">Your Email</label>
+            <input type="email" id="fanEmail" required placeholder="john@example.com">
+        </div>
+
+        <div class="form-group">
+            <label for="serviceType">Select VIP Service</label>
+            <select id="serviceType" required>
+                <option value="shoutout">Personalized Video Shoutout ($150)</option>
+                <option value="meet">15-Min Virtual Meet & Greet ($500)</option>
+                <option value="event">Live Event Appearance (Custom Quote)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="bookingDate">Preferred Date</label>
+            <input type="date" id="bookingDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Event Details / Instructions</label>
+            <textarea id="notes" rows="3" placeholder="Provide details for the celebrity..."></textarea>
+        </div>
+
+        <button type="submit">Submit Request for Approval</button>
+    </form>
+
+    <div id="statusMessage"></div>
+</div>
+
+<script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Capture data entered by the fan
+        const bookingData = {
+            name: document.getElementById('fanName').value,
+            email: document.getElementById('fanEmail').value,
+            service: document.getElementById('serviceType').value,
+            date: document.getElementById('bookingDate').value,
+            notes: document.getElementById('notes').value,
+            status: "Pending Admin Approval" // This prevents automated booking
+        };
+
+        // Log to console to simulate sending to a backend manager dashboard
+        console.log("New Booking Sent to Admin Dashboard:", bookingData);
+
+        // Display success message to the fan
+        const statusBox = document.getElementById('statusMessage');
+        statusBox.className = "success";
+        statusBox.innerText = "Thank you! Your request is pending review. The manager will email you shortly regarding approval and payment.";
+        statusBox.style.display = "block";
+
+        // Reset form
+        document.getElementById('bookingForm').reset();
+    });
+</script>
+
+</body>
+</HTML>
+    
